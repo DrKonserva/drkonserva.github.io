@@ -8,7 +8,7 @@ import {
   w as y,
   e as w,
   C as Z,
-} from "../BQObmdF6.js";
+} from "../script.js";
 import "./webworkerAll-fbf094aj.js";
 import "./colorToUniform-BXaCBwVl.js";
 class M {
