@@ -5928,7 +5928,7 @@ const zt = class zt {
   static sanitizeName(t) {
     return t
       .replace(
-        /[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi,
+        /[^\p{L}\p{N}\p{P}\p{S}\s\u2019]/gu,
         ""
       )
       .replace(/'/g, "â€™");
@@ -5936,7 +5936,7 @@ const zt = class zt {
   static sanitizeInput(t) {
     return (
       (t = t.replace("â€¦", "...")),
-      t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FFâ€™]/gi, "")
+      t.replace(/[^\p{L}\p{N}\p{P}\p{S}\s\u2019]/gu, "")
     );
   }
   static sanitizeEmoji(t) {
