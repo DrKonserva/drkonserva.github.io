@@ -5927,16 +5927,13 @@ const zt = class zt {
   }
   static sanitizeName(t) {
     return t
-      .replace(
-        /[^\p{L}\p{N}\p{P}\p{S}\s\u2019]/gu,
-        ""
-      )
-      .replace(/'/g, "â€™");
+      .replace(/[^\p{L}\p{N}\p{P}\p{S}\s’]/gu, "")
+      .replace(/'/g, "’");
   }
   static sanitizeInput(t) {
     return (
-      (t = t.replace("â€¦", "...")),
-      t.replace(/[^\p{L}\p{N}\p{P}\p{S}\s\u2019]/gu, "")
+      (t = t.replace("…", "...")),
+      t.replace(/[^\p{L}\p{N}\p{P}\p{S}\s’]/gu, "")
     );
   }
   static sanitizeEmoji(t) {

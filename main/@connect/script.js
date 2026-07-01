@@ -22334,16 +22334,13 @@ const Sa = class Sa {
   }
   static sanitizeName(e) {
     return e
-      .replace(
-        /[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi,
-        "",
-      )
+      .replace(/[^\p{L}\p{N}\p{P}\p{S}\s’]/gu, "")
       .replace(/'/g, "’");
   }
   static sanitizeInput(e) {
     return (
       (e = e.replace("…", "...")),
-      e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
+      e.replace(/[^\p{L}\p{N}\p{P}\p{S}\s’]/gu, "")
     );
   }
   static sanitizeEmoji(e) {
@@ -32580,14 +32577,11 @@ class pm {
       .replace("…", "...")
       .replace(/[\u201C\u201D]/gi, '"')
       .replace(/[\u2018\u2019]/g, "'")
-      .replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u2019]/gi, "");
+      .replace(/[^\p{L}\p{N}\p{P}\p{S}\s’]/gu, "");
   }
   static username(e) {
     return e
-      .replace(
-        /[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi,
-        "",
-      )
+      .replace(/[^\p{L}\p{N}\p{P}\p{S}\s’]/gu, "")
       .replace(/'/g, "’");
   }
   static emoji(e) {
